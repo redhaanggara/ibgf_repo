@@ -271,7 +271,7 @@
                 <!-- <li ><a href="#partners">Partners</a></li>->
                 <!-- <li ><a href="#contact">Contact</a></li>-->
                  <li><br>
-                     <form action="http://ibgf.azurewebsites.net/index.php/main/login" method="post">
+                     <form action="http://palhub.azurewebsites.net/index.php/main/login" method="post">
                      <input type="submit" name="btnlogin" value="Login" class="btn btn-primary"><i class="fa fa-log"></i>
                      </form>
                    </li>
@@ -422,37 +422,37 @@
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/1.jpg" />
                 <div class="carousel-caption">
-                  <h2 ><a href="http://ibgf.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg btn-" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
+                  <h2 ><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg btn-" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
                 </div>
             </div></i>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/2.jpg" />
                 <div class="carousel-caption">
-                  <h2><a href="http://ibgf.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
+                  <h2><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
                 </div>
             </div>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/3.jpg" />
                 <div class="carousel-caption">
-                  <h2><a href="http://ibgf.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
+                  <h2><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
                 </div>
             </div>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/4.jpg" />
                 <div class="carousel-caption">
-                  <h2><a href="http://ibgf.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
+                  <h2><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
                 </div>
             </div>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/5.JPEG" />
                 <div class="carousel-caption">
-                  <h2><a href="http://ibgf.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
+                  <h2><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
                 </div>
             </div>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/6.jpg" />
                 <div class="carousel-caption">
-                  <h2><a href="http://ibgf.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
+                  <h2><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
                 </div>
             </div>
         </div>
