@@ -266,7 +266,7 @@
               <ul class="nav navbar-nav navbar-right scroll">
                  <li class="active"><a href="#home">Home</a></li>
                  <li ><a href="#about">About</a></li>
-                 <!--<li ><a href="#bg">Bujang & Gadis</a></li>-->
+                 <li ><a href="http://palhub.azurewebsites.net/index.php/person/page_register">Register PBGF 2017</a></li>
                  <li ><a href="#works">Galery</a></li>
                 <!-- <li ><a href="#partners">Partners</a></li>->
                 <!-- <li ><a href="#contact">Contact</a></li>-->
