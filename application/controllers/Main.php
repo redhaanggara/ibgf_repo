@@ -25,7 +25,7 @@ class Main extends CI_controller{
 	}
 
 	public function home_page(){
-		redirect('http://ibgf.azurewebsites.net/');
+		redirect('http://palhub.azurewebsites.net/');
 	}
 
 
