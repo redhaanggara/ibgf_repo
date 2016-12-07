@@ -28,9 +28,6 @@ class Main extends CI_controller{
 		redirect('http://localhost/master/');
 	}
 
-	public function page_register(){
-		 $this->load->view('register_view');
-	}
 
 }
 

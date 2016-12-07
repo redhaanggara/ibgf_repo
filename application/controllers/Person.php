@@ -4,15 +4,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Person extends CI_Controller {
 
 private $username; private $password; private $adm;
+private $vals;
 
 	public function __construct()
 	{
 		parent::__construct();
 		require_once (APPPATH . 'third_party/dompdf/dompdf_config.inc.php');
 		$this->load->model('person_model','person');
-		$this->load->library(array('session','email'));
-		//$this->load->library('email');
-		$this->load->helper('url');
+		$this->load->library(array('session','email','form_validation'));
+		$this->load->helper(array('captcha','url'));
+
+		//vals captcha
+		$this->vals = array(
+                'img_path'	 => './captcha/',
+                'img_url'	 => base_url().'captcha/',
+                'img_width'	 => '200',
+                'img_height' => 50,
+                'border' => 0, 
+                'expiration' => 1000,
+                'colors' => array(
+                	'background' => array(0,10,0),
+                	'border'=> array(255,255,255),
+                	'text' => array(1000,200,60),
+                	'grid' => array(0,40,40)
+                	)
+            );
 	}
 
 	public function index()
@@ -260,43 +276,93 @@ private $username; private $password; private $adm;
 	}
 
 	public function insert_regis(){
-		$hobiarray="";
-		$prestasiarray="";
-		$nama= $_POST['nama'];
-		$gender= $_POST['gender'];
-		$jurusan= $_POST['jurusan'];
-		$angkatan= $_POST['angkatan'];
-		$nohp= $_POST['nohp'];
-		$email= $_POST['email'];
-		$idline= $_POST['idline'];
-		$hobi= $_POST['hobi'];
-		foreach ($hobi as $dt) {
-			$hobiarray= $hobiarray." ,".$dt;
-		}
-		$prestasi= $_POST['prestasi'];
-		foreach ($prestasi as $dt) {
-			$prestasiarray= $prestasiarray." ,".$dt;
-		}
-		$alamat= $_POST['alamat'];
 
-		$data = array(
-			    'nama' => $nama,
-				'gender' => $gender,
-				'jurusan' => $jurusan,
-				'angkatan' => $angkatan,
-				'nohp' => $nohp,
-				'email' => $email,
-				'idline' => $idline,
-				'hobi' => $hobiarray,
-				'prestasi' => $prestasiarray,
-				'alamat' => $alamat,
-			);
-		$id= $this->person->insert_data_regis($data);
+		$pesanerror= ['required'=> '<span style="color:red;"> we cant accept empty field </span>'];
+		$msg=  ['numeric'=> '<span style="color:red;"> only number </span>'];
+		$captchamsg= "Not Match";
+		
+
+
+
+		$this->form_validation->set_rules('nama','Nama','required',$pesanerror);
+		$this->form_validation->set_rules('gender','Gender','required',$pesanerror);
+		$this->form_validation->set_rules('jurusan','Jurusan','required',$pesanerror);
+		$this->form_validation->set_rules('angkatan','Angkatan','required',$pesanerror);
+		$this->form_validation->set_rules('nohp','Nohp','required|numeric',$msg);
+		$this->form_validation->set_rules('email','Email','required',$pesanerror);
+		$this->form_validation->set_rules('idline','Idline','required',$pesanerror);
+		$this->form_validation->set_rules('hobi[]','Hobi','required',$pesanerror);
+		$this->form_validation->set_rules('prestasi[]','Prestasi','required',$pesanerror);
+		//$this->form_validation->set_rules('alamat','Alamat','required',$pesanerror);
+		$this->form_validation->set_rules('codecaptcha','Codecaptcha','required',$captchamsg);
+
+		//$this->form_validation->set_rules('gender',$gender,'required',$pesanerror);
+		if ($this->form_validation->run() == TRUE) {
+
+			if ( $this->input->post('codecaptcha') === $this->session->userdata('mycaptcha') ) {
+				
+				$nama= $_POST['nama'];
+				$gender= $_POST['gender'];
+				$jurusan= $_POST['jurusan'];
+				$angkatan= $_POST['angkatan'];
+				$nohp= $_POST['nohp'];
+				$email= $_POST['email'];
+				$idline= $_POST['idline'];
+				$hobi= $_POST['hobi'];
+				$hobiarray ="";
+				$prestasiarray="";
+				foreach ($hobi as $dt) {
+					$hobiarray= $hobiarray." ,".$dt;
+				}
+
+				$prestasi= $_POST['prestasi'];
+
+				foreach ($prestasi as $dt) {
+					$prestasiarray= $prestasiarray." ,".$dt;
+				}
+
+				$alamat= $_POST['alamat'];
+
+				$data = array(
+				    'nama' => $nama,
+					'gender' => $gender,
+					'jurusan' => $jurusan,
+					'angkatan' => $angkatan,
+					'nohp' => $nohp,
+					'email' => $email,
+					'idline' => $idline,
+					'hobi' => $hobiarray,
+					'prestasi' => $prestasiarray,
+					'alamat' => $alamat,
+				);
 			
-			if ($id !== 0) {
-				$query['posts']= $this->person->data_cetak($id);
-				$this->load->view('cetak',$query);
+				$id= $this->person->insert_data_regis($data);
+				
+				if ($id !== 0) {
+					$query['posts']= $this->person->data_cetak($id);
+					$this->load->view('cetak',$query);
+				}
+
 			}
+			else{
+				$cap = create_captcha($this->vals);
+	        $data['image'] = $cap['image'];
+	        $data['value'] =$cap['word'];
+	        $this->session->set_userdata('mycaptcha', $cap['word']);
+			$this->load->view('register_view',$data);
+			}
+			
+		}
+
+		else{
+			$cap = create_captcha($this->vals);
+	        $data['image'] = $cap['image'];
+	        $data['value'] =$cap['word'];
+	        $this->session->set_userdata('mycaptcha', $cap['word']);
+			$this->load->view('register_view',$data);
+		}	
+		
+
 	}
 
 	public function create_pdf(){
@@ -344,18 +410,6 @@ private $username; private $password; private $adm;
 		$hobi= $_POST['hobi'];
 		$prestasi= $_POST['prestasi'];
 		$alamat= $_POST['alamat'];
-
-		/*echo $id;
-		echo $nama;
-		echo $gender;
-		echo $jurusan;
-		echo $angkatan;
-		echo $nohp;
-		echo $email;
-		echo $idline;
-		echo $hobi;
-		echo $prestasi;
-		echo $alamat;*/
 
 		$data = array(
 			    'nama' => $nama,
@@ -432,8 +486,8 @@ private $username; private $password; private $adm;
         $config = [
          'protocol'=> 'smtp',
          'smtp_host'=> 'smtp.mail.yahoo.com',
-         'smtp_user'=> 'it.side@yahoo.com',
-         'smtp_pass'=> 'imthebest6537RH',
+         'smtp_user'=> 'ibgffasilkom@yahoo.com',
+         'smtp_pass'=> 'rizkyrendy2016',
          'smtp_port'=> '465',
          'smtp_crypto'=> 'ssl',
          'smtp_timeout'=> 180,
@@ -443,7 +497,7 @@ private $username; private $password; private $adm;
 
 		$this->email->initialize($config);
 
-		$this->email->from('it.side@yahoo.com','IBGF Fasilkom');
+		$this->email->from('ibgffasilkom@yahoo.com','IBGF Fasilkom');
 		$this->email->to($email);
 	
 		
@@ -468,6 +522,14 @@ private $username; private $password; private $adm;
 		else{
 			show_error($this->email->print_debugger());
 		}
+	}
+
+	public function page_register(){
+		    $cap = create_captcha($this->vals);
+	        $data['image'] = $cap['image'];
+	        $data['value'] =$cap['word'];
+	        $this->session->set_userdata('mycaptcha', $cap['word']);
+			$this->load->view('register_view',$data);
 	}
 
 }

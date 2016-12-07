@@ -66,20 +66,22 @@
 					<form role="form" autocomplete="off" action="http://localhost/master/person/insert_regis" method="post">
 						<div class="form-group">
 							<label for="inputnama">Nama Lengkap</label>
-							<input type="text" name="nama" placeholder="Nama Legkap" class="form-control">
+							<input type="text" name="nama" class="form-control" value="<?php echo set_value('nama') ?>">
+							<?php echo form_error('nama'); ?>
 						</div>
 						<div class="form-group">
 							<label for="gender">Gender</label>
 							<select class="form-control" name="gender">
-							  <option value="">Jenis Kelamin</option>
+							  <option value="<?php echo set_value('gender'); ?>"><?php echo set_value('gender'); ?></option>
 							  <option value="bujang">Bujang</option>
 							  <option value="gadis">Gadis</option>
 							</select>
+							<?php echo form_error('gender'); ?>
 						</div>
 						<div class="form-group">
 							<label for="jurusan">Jurusan</label>
 				            <select class="form-control" name="jurusan">
-				            	<option value="">Jurusan</option>
+				            	<option value="<?php echo set_value('jurusan'); ?>"> <?php echo set_value('jurusan'); ?> </option>
 							  <optgroup label="Teknik Informatika">
 								    <option value="ti reg">Teknik Informatika Reguler</option>
 								    <option value="tibil">Teknik Informatika Bilingual</option>
@@ -99,57 +101,74 @@
 								    <option value="tkj">Teknik Komputer jaringan</option>
 							  </optgroup>
 							</select>
+							<?php echo form_error('jurusan'); ?>
 						</div>
 						<div class="form-group">
 							<label for="angkatan">Angkatan</label>
 							<select class="form-control" name="angkatan">
-							  <option value="">Angkatan</option>
+							  <option value="<?php echo set_value('angkatan')?>"> <?php echo set_value('angkatan')?> </option>
 							  <option value="2014">2014</option>
 							  <option value="2015">2015</option>
 							  <option value="2016">2016</option>
 							</select>
+							<?php echo form_error('angkatan'); ?>
 						</div>
 						<div class="form-group">
 							<label for="nohp">No. Handphone</label>
-							<input type="text" name="nohp" placeholder="No. Handphone" class="form-control">
+							<input type="text" name="nohp"  class="form-control" value="<?php echo set_value('nohp'); ?>">
+							<?php echo form_error('nohp'); ?>
 						</div>
 						<div class="form-group">
 							<label for="email">Email</label>
-							<input type="email" name="email" placeholder="Email" class="form-control">
+							<input type="email" name="email"  class="form-control" value="<?php echo set_value('email'); ?>">
+							<?php echo form_error('email'); ?>
 						</div>
 						<div class="form-group">
 							<label for="idline">Id LINE</label>
-							<input type="text" name="idline" placeholder="Id LINE" class="form-control">
+							<input type="text" name="idline"  class="form-control" value="<?php echo set_value('idline'); ?>">
+							<?php echo form_error('idline'); ?>
 						</div>
 						<div class="form-group" id="myForm">
 							<label for="Hobi">Hobi</label>
 							<div class="entry input-group">
 								<div class="field_wrapper">
 									<div class="input-group">
-								    	<input type="text" name="hobi[]" placeholder="Hobi" class="form-control">
+								    	<input type="text" name="hobi[]"  class="form-control" value="<?php echo set_value('hobi[]'); ?>">
 								    	  <span class="input-group-btn">
 											    <a href="javascript:void(0);" id="add_button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
 									     </span>
 								    </div>
 								</div>
 							</div>
+							<?php echo form_error('hobi[]'); ?>
 						</div>
 						<div class="form-group">
 							<label for="prestasi">Prestasi Yang Pernah di Raih</label>
 							<div class="entry input-group">
 								<div class="field_wrapper2">
 									<div class="input-group">
-										<input type="text" name="prestasi[]" placeholder="Prestasi" class="form-control">
+										<input type="text" name="prestasi[]"  class="form-control" value="<?php echo set_value('prestasi[]'); ?>">
 										<span class="input-group-btn">
 											<a href="javascript:void(1);" id="add_buttonPrestasi" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
 										</span>
 									</div>
 								</div>
 							</div>
+							<?php echo form_error('prestasi[]'); ?>
 						</div>
 						<div class="form-group">
 							<label for="alamat">Alamat</label>
-							<textarea class="form-control" rows="3" name="alamat"></textarea>
+							<textarea class="form-control" rows="3" name="alamat">
+							<?php echo set_value('alamat'); ?>
+							</textarea>
+							<?php echo form_error('alamat'); ?>
+						</div>
+						<div class="form-group">
+							<label for="Captcha">Insert the code</label><p>
+							<?= $image; ?><p>
+							<!--<?= $value; ?><p>-->
+							<input type="text" name="codecaptcha" class="form-control">
+							<?php echo form_error('codecaptcha'); ?>
 						</div>
 						<br><br>
 						 <button type="submit" class="btn btn-primary btn-block"" name="btnregister">Register</button>
