@@ -34,7 +34,7 @@
 			<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Pendaftar</a></li>
-				<li ><a href="http://ibgf.azurewebsites.net/index.php/person">Anggota</a></li>
+				<li ><a href="http://palhub.azurewebsites.net/index.php/person">Anggota</a></li>
 			</ul>
 
 			<div class="nav navbar-nav navbar-right">
