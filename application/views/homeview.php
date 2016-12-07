@@ -271,7 +271,7 @@
                 <!-- <li ><a href="#partners">Partners</a></li>->
                 <!-- <li ><a href="#contact">Contact</a></li>-->
                  <li><br>
-                     <form action="index.php/main/login" method="post">
+                     <form action="http://ibgf.azurewebsites.net/index.php/main/login" method="post">
                      <input type="submit" name="btnlogin" value="Login" class="btn btn-primary"><i class="fa fa-log"></i>
                      </form>
                    </li>
