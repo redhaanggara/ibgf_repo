@@ -18,7 +18,7 @@
 
 <br>
   <div class="container">
-  <h3><a href="http://localhost/master/main/home_page"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp Home Page</a></h3>
+  <h3><a href="http://ibgf.azurewebsites.net/index.php/main/home_page"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp Home Page</a></h3>
   <br>
   <legend>Admin Login</legend>
 
