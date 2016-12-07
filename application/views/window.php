@@ -34,11 +34,11 @@
 			<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Pendaftar</a></li>
-				<li ><a href="http://localhost/master/person">Anggota</a></li>
+				<li ><a href="http://ibgf.azurewebsites.net/index.php/person">Anggota</a></li>
 			</ul>
 
 			<div class="nav navbar-nav navbar-right">
-				<li><a href="http://localhost/master/person/logout">Logout</a></li>
+				<li><a href="http://ibgf.azurewebsites.net/index.php/person/logout">Logout</a></li>
 			</div>
 		</div>
 	 </nav>
@@ -86,7 +86,7 @@
 	    		<td><?php echo $row->prestasi?></td>
 	    		<td><?php echo $row->alamat?></td>
 	    		<td><?php echo $row->status?></td>
-	    		<td><a href="http://localhost/master/person/admin_update_pendaftar?id=<?php echo  $row->id; ?>" class="btn btn-primary" class="btn btn-primary">Update</a> <a href="http://localhost/master/person/admin_delete_pendaftar?id=<?php echo  $row->id; ?>" class="btn btn-danger">Delete</a></td>
+	    		<td><a href="http://ibgf.azurewebsites.net/index.php/person/admin_update_pendaftar?id=<?php echo  $row->id; ?>" class="btn btn-primary" class="btn btn-primary">Update</a> <a href="http://localhost/master/person/admin_delete_pendaftar?id=<?php echo  $row->id; ?>" class="btn btn-danger">Delete</a></td>
 	    	
 	    	</tr>
 	    </tbody>
