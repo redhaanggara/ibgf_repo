@@ -420,25 +420,11 @@
 
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
             <div data-p="141.75" style="display: none;">
-		     <div class="carousel-caption">
-                  <div class="carousel-caption">
-              <h3 class="slider-head">
-                Upcoming Events<br>
-              </h3>
-              <h4 class="slider-sub">
-                IT Project Management:<br>
-                Fundamentals & <br>
-                Practices
-              </h4>
-              <p class="slider-sub">
-                Become an extraordinary leader. This course<br>
-                will teach you the best practices of project
-                management<br> and prepare you to be a game-
-                changer at your company
-              </p>
-            </div>
-                </div>
                 <img data-u="image" src="assets/images/slider/1.jpg" />
+		    
+		    <div class="carousel-caption">
+                  <h2><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
+                </div>
             </div>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/2.jpg" />
