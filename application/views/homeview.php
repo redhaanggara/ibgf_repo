@@ -420,10 +420,10 @@
 
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
             <div data-p="141.75" style="display: none;">
-                <img data-u="image" src="assets/images/slider/1.jpg" />
-                <div class="carousel-caption">
-                  <a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg btn-" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a>
+		     <div class="carousel-caption">
+                  <a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg btn-" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017a</i></a>
                 </div>
+                <img data-u="image" src="assets/images/slider/1.jpg" />
             </div>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/2.jpg" />
