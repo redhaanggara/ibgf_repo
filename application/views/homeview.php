@@ -424,7 +424,7 @@
                 <div class="carousel-caption">
                   <h2 ><a href="http://palhub.azurewebsites.net/index.php/person/page_register" class="btn btn-info btn-lg btn-" role="button"><i class="fa fa-bullhorn">&nbsp Join On PBGF 2017</i></a></h2>
                 </div>
-            </div></i>
+            </div>
             <div data-p="141.75" style="display: none;">
                 <img data-u="image" src="assets/images/slider/2.jpg" />
                 <div class="carousel-caption">
